@@ -22,7 +22,7 @@ int main()
     std::ofstream output_file("example/data.csv");
     output_file << "Event,Site,White,Black,Result,UTCDate,UTCTime,WhiteElo,BlackElo,WhiteRatingDiff,BlackRatingDiff,ECO,Opening,TimeControl,Termination" << std::endl;
 
-    std::fstream input_file("example/lichess_db_standard_rated_2013-01.pgn");
+    std::fstream input_file("example/lichess_db_standard_rated_2013-01.pgn");  // Source: https://database.lichess.org/
 
     std::string line;
     while (std::getline(input_file, line))
@@ -61,6 +61,7 @@ int main()
             output_file << Event << "," << Site << "," << White << "," << Black << "," << Result << "," << UTCDate << "," << UTCTime << "," << WhiteElo << "," << BlackElo << "," << WhiteRatingDiff << "," << BlackRatingDiff << "," << ECO << "," << Opening << "," << TimeControl << "," << Termination << std::endl;
         }
     }
+
     input_file.close();
     output_file.close();
     return 0;
